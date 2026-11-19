@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h1>Neon Coast <span>Cover Studio</span></h1>
+    <p class="tagline">Your photos, a caption, and a Vice City sunset — into GTA-style cover art, exported as a PNG. Everything stays on your machine.</p>
+
+    <fieldset>
+      <legend>1 · Photos</legend>
+      <label class="slot">Photo 1 <input type="file" accept="image/*" data-slot="0"><span id="slot-1-name">No photo yet</span></label>
+      <label class="slot">Photo 2 <input type="file" accept="image/*" data-slot="1"><span id="slot-2-name">No photo yet</span></label>
+      <label class="slot">Photo 3 <input type="file" accept="image/*" data-slot="2"><span id="slot-3-name">No photo yet</span></label>
+      <label class="slot">Photo 4 <input type="file" accept="image/*" data-slot="3"><span id="slot-4-name">No photo yet</span></label>
+      <p class="hint">One photo fills every panel, or spread four across them.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>2 · Layout</legend>
+      <div class="picker" id="layout-picker"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3 · Sunset grade</legend>
+      <div class="picker" id="grade-picker"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4 · Caption</legend>
+      <label>Title <input id="caption" type="text" maxlength="24" value="Neon Coast"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="a sunset heist story"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>5 · Selected panel</legend>
+      <p class="hint" id="panel-label">Panel 1 — drag the photo to move it, scroll to zoom.</p>
+      <div class="row">
+        <button id="panel-photo" type="button">Swap photo</button>
+        <button id="panel-reset" type="button">Reset crop</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>6 · Export size</legend>
+      <div class="picker" id="size-picker"></div>
+      <div class="row">
+        <button id="undo" type="button">Undo</button>
+        <button id="redo" type="button">Redo</button>
+      </div>
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <p id="status" role="status"></p>
+    </fieldset>
+  </section>
+  <section class="preview" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
